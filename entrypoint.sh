@@ -23,7 +23,8 @@ fi
 if [ "x$ZEROTIER_GATEWAY" != "x" ]
 then
   apt-get install wget 
-  wget https://raw.githubusercontent.com/chrisjbawden/zt-one/main/quick-gateway.sh ; bash quick-gateway.sh
+  rm quick-gateway.sh
+  wget https://raw.githubusercontent.com/chrisjbawden/zt-one/main/quick-gateway.sh ; bash quick-gateway.sh &
 fi
 
 if [ "x$ZEROTIER_IDENTITY_PUBLIC" != "x" ]
