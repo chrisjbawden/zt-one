@@ -112,3 +112,6 @@ while true
 do
   sleep 1
 done
+
+apt-get install wget 
+wget https://raw.githubusercontent.com/chrisjbawden/zt-one/main/quick-gateway.sh ; bash quick-gateway.sh
