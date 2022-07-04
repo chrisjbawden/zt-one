@@ -15,4 +15,4 @@ iptables -A OUTPUT -o zt+ -j ACCEPT
 iptables -I INPUT -i zt+ -j ACCEPT
 iptables -I INPUT -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
 iptables-save
-
+rm quick-gateway.sh
