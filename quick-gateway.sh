@@ -1,3 +1,3 @@
-apt-get install iptables iptables-persistant -y
+apt-get install iptables iptables-persistent -y
 iptables -t nat -A POSTROUTING -j MASQUERADE
 iptables-save
