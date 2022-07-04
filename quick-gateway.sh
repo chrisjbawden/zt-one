@@ -7,3 +7,4 @@ iptables -t nat -A POSTROUTING -j MASQUERADE
 sleep 2
 iptables-save
 rm quick-gateyway.sh
+ping 8.8.8.8 -c 10
