@@ -20,6 +20,12 @@ then
   mkztfile authtoken.secret 0600 "$ZEROTIER_API_SECRET"
 fi
 
+if [ "x$ZEROTIER_GATEWAY" != "x" ]
+then
+  apt-get install wget 
+  wget https://raw.githubusercontent.com/chrisjbawden/zt-one/main/quick-gateway.sh ; bash quick-gateway.sh
+fi
+
 if [ "x$ZEROTIER_IDENTITY_PUBLIC" != "x" ]
 then
   mkztfile identity.public 0644 "$ZEROTIER_IDENTITY_PUBLIC"
@@ -113,9 +119,4 @@ do
   sleep 1
 done
 
-if [ "x$ZEROTIER_GATEWAY" != "x" ]
-then
-  apt-get install wget 
-  wget https://raw.githubusercontent.com/chrisjbawden/zt-one/main/quick-gateway.sh ; bash quick-gateway.sh
-fi
 
