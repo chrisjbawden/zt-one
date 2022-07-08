@@ -1,8 +1,8 @@
-sleep 10
+update(){
 apt-get install iptables -y
-sleep 2
+}
+routing() {
 iptables -F
-sleep 2
 iptables -P FORWARD ACCEPT
 iptables -P INPUT   ACCEPT
 iptables -P OUTPUT  ACCEPT
@@ -15,4 +15,11 @@ iptables -A OUTPUT -o zt+ -j ACCEPT
 iptables -I INPUT -i zt+ -j ACCEPT
 iptables -I INPUT -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
 iptables-save
+}
+clean() {
 rm quick-gateway.sh
+}
+
+update
+routing
+clean
